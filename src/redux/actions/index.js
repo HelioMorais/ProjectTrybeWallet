@@ -3,6 +3,7 @@ export const LOGIN = 'LOGIN';
 export const SUCCESS_REQUEST = 'SUCCESS_REQUEST';
 export const FAILED_REQUEST = 'FAILED_REQUEST';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export const login = (payload) => ({ type: LOGIN, payload });
 
@@ -11,6 +12,8 @@ export const successRequest = (payload) => ({ type: SUCCESS_REQUEST, payload });
 export const failedRequest = (error) => ({ type: FAILED_REQUEST, error });
 
 export const addExpenses = (payload) => ({ type: ADD_EXPENSES, payload });
+
+export const deleteExpenses = (expenses) => ({ type: DELETE_EXPENSES, expenses });
 
 export function getCurrencies() {
   return async (dispatch) => {

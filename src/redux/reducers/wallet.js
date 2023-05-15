@@ -1,5 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { SUCCESS_REQUEST, FAILED_REQUEST, ADD_EXPENSES } from '../actions';
+import { SUCCESS_REQUEST, FAILED_REQUEST, ADD_EXPENSES,
+  DELETE_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -19,6 +20,11 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
+    };
+  case DELETE_EXPENSES:
+    return {
+      ...state,
+      expenses: action.expenses,
     };
   case FAILED_REQUEST:
     return console.log(action.error.message);
